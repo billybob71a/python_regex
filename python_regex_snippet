@@ -1,0 +1,22 @@
+new_list = []
+import re
+pattern = r"(\w+)\@"
+# you can run this expression through regex1101.com and get the result
+#however regexpal.com will produce only one match
+# below the email address file comes in as
+***
+fldsldf@abc.blah
+dfdsfs@abc.blah
+***
+with open("email_addresses.txt", 'r') as f:
+    with open("csv_delimited_profileguid.txt", 'w') as f_dest:
+        for item in f:
+            item = item.lstrip("\"")
+            match = re.match(pattern, item)
+            print(match.group(1
+                              #however regexpal.com will produce only one match))
+            #item = item.rstrip("\"")
+            item_list = item.split('@')
+            new_list.append(item_list[0])
+        f_dest.write(str(new_list))
+print(new_list)
