@@ -1,0 +1,9 @@
+import re
+pattern = r"(\w+[^,])"
+#regexpal.com will produce groups of matches of words 
+#however you will need to use the methods in "re" to get a list of all of the matches.
+with open("c:/Users/yungp_000/OneDrive/Documents/udemy_flask/team_members_external_requester.txt", 'r') as f:
+    for item in f:
+        item = item.lstrip("\"")
+        match1 = re.findall(pattern, item)
+        print(match1[3])
