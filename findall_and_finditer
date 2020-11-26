@@ -1,0 +1,36 @@
+import re
+pattern = r"\d+"
+text = "NY Postal codes are 1001, 1002, 10003"
+
+print('Pattern',pattern)
+
+match = re.findall(pattern, text)
+
+if match:
+    print(match)
+else:
+    print("no match")
+   
+   
+# re.findall could potentially slow down running of the code if you have a large chunk of text that you want to search through
+
+#re.finditer would be a faster solution instead of re.findall and it gives you more control of how much to find
+
+import re
+pattern = r"\d+"
+text = "NY Postal codes are 1001, 1002, 10003"
+
+print('Pattern',pattern)
+
+match_iter = re.finditer(pattern, text)
+
+print('Matches')
+
+i = 0
+
+for match in match_iter:
+    print('\t', match.group(0), 'at index:', match.start())
+    i +=1
+
+    if i > 2:
+        break
