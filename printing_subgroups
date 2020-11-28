@@ -1,0 +1,29 @@
+import re
+pattern = r"(\d{4})(\d{2})(\d{2})"
+text = "Start Date: 20200920"
+
+print('Pattern',pattern)
+
+match = re.search(pattern, text)
+
+print('Matches')
+
+if match:
+    print(match.group(0), 'at index:', match.start())
+    print('Groups', match.groups())
+    print(match.group(1))
+    print(match.group(2))
+    print(match.group(3))
+else:
+    print('no match')
+    
+    This will produce the result
+    
+    Pattern (\d{4})(\d{2})(\d{2})
+Matches
+20200920 at index: 12
+Groups ('2020', '09', '20')
+2020
+09
+20
+PS C:\Users\yungp_000>
