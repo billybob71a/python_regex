@@ -18,7 +18,7 @@ else:
     print('no match')
     
     
-Using the "enumrate" function this will take the tuple and create index for items in the tuple. The result of running the code will be as follows.
+Using the "enumrate" function this will take the tuple and create index for items in the tuple. Group 0 refers to the entire pattern, Group 1 onwards refers to the subgroups. The result of running the code will be as follows.
 
 PS C:\Users\yungp_000> & python c:/Users/yungp_000/OneDrive/Documents/udemy_flask/learn_regex_1.py
 Pattern (\d{4})(\d{2})(\d{2})
