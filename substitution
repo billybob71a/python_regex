@@ -1,0 +1,27 @@
+import datetime
+import re
+
+def format_date(match):
+    in_date = match.groupdict()
+
+    year = int(in_date['year'])
+    month = int(in_date['month'])
+    day = int(in_date['day'])
+
+    return datetime.date(year, month, day).strftime('%b-%d-%Y')
+
+pattern = r"(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})"
+text = "Start Date: 20200920"
+
+new_text = re.sub(pattern, format_date, text)
+print(new_text)
+
+this outputs
+
+Start Date: Sep-20-2020
+
+The re.sub function will look for the pattern in the "text" variable and then call the function format_date . The format_date is what I learned from another lecture as the first-class function.
+
+It get's the "match" because somewhere in the re.sub code it gave the value for match
+
+and then "format_date" function is able to use this variable "match" and output the correct replaced text.
