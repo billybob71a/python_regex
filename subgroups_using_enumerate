@@ -1,0 +1,31 @@
+import re
+pattern = r"(\d{4})(\d{2})(\d{2})"
+text = "Start Date: 20200920"
+
+print('Pattern',pattern)
+
+match = re.search(pattern, text)
+
+print('Matches')
+
+if match:
+    print(match.group(0), 'at index:', match.start())
+    print('Groups', match.groups())
+    for idx, value in enumerate(match.groups()):
+        print('\tGroup', idx+1, value,  '\tat index', match.start(idx+1))
+
+else:
+    print('no match')
+    
+    
+Using the "enumrate" function this will take the tuple and create index for items in the tuple. The result of running the code will be as follows.
+
+PS C:\Users\yungp_000> & python c:/Users/yungp_000/OneDrive/Documents/udemy_flask/learn_regex_1.py
+Pattern (\d{4})(\d{2})(\d{2})
+Matches
+20200920 at index: 12
+Groups ('2020', '09', '20')
+        Group 1 2020    at index 12
+        Group 2 09      at index 16
+        Group 3 20      at index 18
+PS C:\Users\yungp_000>
