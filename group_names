@@ -1,0 +1,30 @@
+import re
+pattern = r"(?P<year>\d{4})(?P<month>\d{2})(?P<day>\d{2})"
+text = "Start Date: 20200920"
+ 
+print('Pattern',pattern)
+ 
+match = re.search(pattern, text)
+ 
+print('Matches')
+ 
+if match:
+    print(match.group(0), 'at index:', match.start())
+    #Now access the subgroups as dictionaries
+    print('\t', match.groupdict())
+    print('\t', match.group('year'))
+    print('\t', match.group('month'))
+    print('\t', match.group('day'))
+    
+else:
+    print('no match')
+
+
+The above example of using named groups  is more common as we can refer to it as a
+
+       match.group('year") is   2020
+
+       match.group('month')is 09
+
+       match.group('day') is   20
+
